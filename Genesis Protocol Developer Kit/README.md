@@ -132,27 +132,27 @@ Each archetype comes with:
 
 ### **Installation**
 
-1. **Clone the Repository**
+#### 1. **Clone the Repository**
 
 ```bash
 git clone https://github.com/Hams-Ollo/Genesis-Protocol-Developer-Kit.git
 cd "Genesis Protocol Developer Kit"
 ```
 
-1. **Create Virtual Environment**
+#### 2. **Create Virtual Environment**
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 ```
 
-1. **Install Dependencies**
+#### 3. **Install Dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-1. **Run the Environment Setup Script**
+#### 4. **Run the Environment Setup Script**
 
 ```bash
 python genesis_setup.py
@@ -161,7 +161,7 @@ python genesis_setup.py
 - This step installs the core and optional dependencies.
 - Sets up the development environment with Git hooks and configurations.
 
-1. **Run the Project Initializer**
+#### 5. **Run the Project Initializer**
 
 ```bash
 python initialize_project.py
@@ -173,17 +173,18 @@ python initialize_project.py
 
 ### **Creating a New Project**
 
-1. **Run the Project Initializer**
+#### 1. **Run the Project Initializer**
 
 ```bash
 python initialize_project.py
 ```
 
-1. **Follow the Interactive Setup**
-   - Answer project profiling questions.
-   - Select desired technologies.
-   - Configure project settings.
-   - Review and confirm generation.
+#### 2. **Follow the Interactive Setup**
+
+- Answer project profiling questions.
+- Select desired technologies.
+- Configure project settings.
+- Review and confirm generation.
 
 ---
 
