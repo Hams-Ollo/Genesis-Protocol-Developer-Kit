@@ -135,7 +135,7 @@ Each archetype comes with:
 1. **Clone the Repository**
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Hams-Ollo/Genesis-Protocol-Developer-Kit.git
 cd "Genesis Protocol Developer Kit"
 ```
 
