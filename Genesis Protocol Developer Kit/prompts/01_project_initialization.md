@@ -7,6 +7,7 @@
 When guiding users through archetype selection, consider these aspects:
 
 #### Alchemist Class
+
 ```yaml
 focus: "Experimental ML/AI Research"
 traits:
@@ -20,6 +21,7 @@ questions:
 ```
 
 #### Sentinel Class
+
 ```yaml
 focus: "Security and Performance"
 traits:
@@ -33,6 +35,7 @@ questions:
 ```
 
 #### Oracle Class
+
 ```yaml
 focus: "Data Analytics and Insights"
 traits:
@@ -46,6 +49,7 @@ questions:
 ```
 
 #### Engineer Class
+
 ```yaml
 focus: "System Architecture"
 traits:
@@ -59,6 +63,7 @@ questions:
 ```
 
 #### Innovator Class
+
 ```yaml
 focus: "Cutting-Edge Technology"
 traits:
@@ -72,6 +77,7 @@ questions:
 ```
 
 #### Lorekeeper Class
+
 ```yaml
 focus: "Knowledge Management"
 traits:

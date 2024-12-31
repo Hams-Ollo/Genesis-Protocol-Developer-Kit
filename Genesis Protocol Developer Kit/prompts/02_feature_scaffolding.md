@@ -3,6 +3,7 @@
 ## Archetype-Specific Features
 
 ### Alchemist Class Features
+
 ```yaml
 ml_pipeline:
   components:
@@ -30,6 +31,7 @@ experiment_tracking:
 ```
 
 ### Sentinel Class Features
+
 ```yaml
 security_monitoring:
   components:
@@ -56,6 +58,7 @@ performance_optimization:
 ```
 
 ### Oracle Class Features
+
 ```yaml
 analytics_pipeline:
   components:
@@ -82,6 +85,7 @@ knowledge_graph:
 ```
 
 ### Engineer Class Features
+
 ```yaml
 infrastructure:
   components:
@@ -109,6 +113,7 @@ ci_cd:
 ```
 
 ### Innovator Class Features
+
 ```yaml
 prototyping:
   components:
@@ -136,6 +141,7 @@ ai_integration:
 ```
 
 ### Lorekeeper Class Features
+
 ```yaml
 knowledge_base:
   components:
@@ -164,6 +170,7 @@ taxonomy:
 ## Common Features
 
 ### Authentication & Authorization
+
 ```yaml
 components:
   - User management
@@ -178,6 +185,7 @@ tools:
 ```
 
 ### API Development
+
 ```yaml
 components:
   - REST endpoints
@@ -192,6 +200,7 @@ tools:
 ```
 
 ### Testing Framework
+
 ```yaml
 components:
   - Unit testing
@@ -206,6 +215,7 @@ tools:
 ```
 
 ### Monitoring & Logging
+
 ```yaml
 components:
   - Metrics collection

@@ -152,6 +152,23 @@ source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+1. **Run the Environment Setup Script**
+
+```bash
+python genesis_setup.py
+```
+
+- This step installs the core and optional dependencies.
+- Sets up the development environment with Git hooks and configurations.
+
+1. **Run the Project Initializer**
+
+```bash
+python initialize_project.py
+```
+
+- This step guides you through creating a project structure tailored to your needs.
+
 ---
 
 ### **Creating a New Project**
@@ -163,10 +180,10 @@ python initialize_project.py
 ```
 
 1. **Follow the Interactive Setup**
-   - Answer project profiling questions
-   - Select desired technologies
-   - Configure project settings
-   - Review and confirm generation
+   - Answer project profiling questions.
+   - Select desired technologies.
+   - Configure project settings.
+   - Review and confirm generation.
 
 ---
 

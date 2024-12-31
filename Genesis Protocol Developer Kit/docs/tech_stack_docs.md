@@ -3,6 +3,7 @@
 ## Archetype-Specific Tech Stacks
 
 ### Alchemist Class Stack
+
 ```yaml
 core_ml:
   - TensorFlow/PyTorch: Deep learning frameworks
@@ -24,6 +25,7 @@ development:
 ```
 
 ### Sentinel Class Stack
+
 ```yaml
 security:
   - OWASP ZAP: Security testing
@@ -45,6 +47,7 @@ infrastructure:
 ```
 
 ### Oracle Class Stack
+
 ```yaml
 data_processing:
   - Apache Spark: Large-scale processing
@@ -66,6 +69,7 @@ storage:
 ```
 
 ### Engineer Class Stack
+
 ```yaml
 backend:
   - FastAPI: API framework
@@ -87,6 +91,7 @@ infrastructure:
 ```
 
 ### Innovator Class Stack
+
 ```yaml
 ai_services:
   - LangChain: LLM framework
@@ -108,6 +113,7 @@ monitoring:
 ```
 
 ### Lorekeeper Class Stack
+
 ```yaml
 search:
   - Elasticsearch: Search engine
@@ -131,6 +137,7 @@ content:
 ## Common Infrastructure
 
 ### Development Tools
+
 ```yaml
 ide:
   - VS Code
@@ -150,6 +157,7 @@ quality:
 ```
 
 ### Deployment
+
 ```yaml
 containers:
   - Docker
@@ -168,6 +176,7 @@ monitoring:
 ```
 
 ### Security
+
 ```yaml
 authentication:
   - OAuth 2.0
@@ -184,6 +193,7 @@ tools:
 ## Version Requirements
 
 ### Python Dependencies
+
 ```yaml
 core:
   python: ">=3.8"
@@ -202,6 +212,7 @@ ml:
 ```
 
 ### Infrastructure
+
 ```yaml
 containers:
   docker: ">=24.0"

@@ -34,7 +34,7 @@ import sys
 import subprocess
 import logging
 from pathlib import Path
-from typing import List, Dict
+from typing import List
 
 # Basic logging setup
 logging.basicConfig(
@@ -48,7 +48,7 @@ class GenesisSetup:
     def __init__(self):
         self.base_dir = Path(__file__).parent
         self.requirements_file = self.base_dir / "requirements.txt"
-        
+
         # Core requirements for the Genesis Kit
         self.core_requirements = [
             "questionary>=2.0.0",
@@ -62,7 +62,7 @@ class GenesisSetup:
             "pyyaml>=6.0.0",
             "toml>=0.10.0"
         ]
-        
+
         # Optional tool-specific requirements
         self.tool_requirements = {
             "development": [
@@ -85,8 +85,8 @@ class GenesisSetup:
                 "tiktoken>=0.5.0"
             ]
         }
-        
-        # Define archetype-specific requirements
+
+        # Archetype-specific requirements
         self.archetype_requirements = {
             "alchemist": {
                 "core": [
@@ -167,12 +167,12 @@ class GenesisSetup:
                 ]
             }
         }
-    
+
     def check_python_version(self) -> bool:
         """Check if Python version meets requirements."""
         required_version = (3, 8)
         current_version = sys.version_info[:2]
-        
+
         if current_version < required_version:
             logger.error(
                 f"Python {required_version[0]}.{required_version[1]} or higher is required. "
@@ -180,7 +180,7 @@ class GenesisSetup:
             )
             return False
         return True
-    
+
     def create_virtual_environment(self) -> bool:
         """Create a virtual environment for the kit."""
         try:
@@ -193,13 +193,13 @@ class GenesisSetup:
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to create virtual environment: {str(e)}")
             return False
-    
+
     def get_venv_python(self) -> str:
         """Get the path to the virtual environment Python executable."""
         if sys.platform == "win32":
             return str(self.base_dir / "venv" / "Scripts" / "python.exe")
         return str(self.base_dir / "venv" / "bin" / "python")
-    
+
     def install_requirements(self, requirements: List[str]) -> bool:
         """Install the specified requirements."""
         try:
@@ -215,18 +215,18 @@ class GenesisSetup:
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to install requirements: {e.stderr}")
             return False
-    
+
     def generate_requirements_file(self) -> None:
         """Generate requirements.txt with all dependencies."""
         all_requirements = self.core_requirements.copy()
         for category in self.tool_requirements.values():
             all_requirements.extend(category)
-        
+
         with open(self.requirements_file, "w") as f:
             f.write("\n".join(all_requirements))
-        
+
         logger.info("Generated requirements.txt")
-    
+
     def setup_git_hooks(self) -> None:
         """Set up Git hooks for development."""
         try:
@@ -238,33 +238,33 @@ class GenesisSetup:
             logger.info("Git hooks installed successfully")
         except subprocess.CalledProcessError as e:
             logger.warning(f"Failed to set up Git hooks: {str(e)}")
-    
+
     def run_setup(self) -> None:
         """Run the complete setup process."""
         print("\n🚀 Setting up Genesis Protocol Developer Kit...\n")
-        
+
         # Check Python version
         if not self.check_python_version():
             sys.exit(1)
-        
+
         # Create virtual environment
         if not self.create_virtual_environment():
             sys.exit(1)
-        
+
         # Generate requirements.txt
         self.generate_requirements_file()
-        
+
         # Install core requirements
         print("\n📦 Installing core requirements...")
         if not self.install_requirements(self.core_requirements):
             sys.exit(1)
-        
+
         # Ask for optional components
         print("\n🎯 Select additional components to install:\n")
         try:
             import questionary
             from rich.console import Console
-            
+
             console = Console()
             selected_components = questionary.checkbox(
                 "Choose additional components:",
@@ -274,27 +274,27 @@ class GenesisSetup:
                     "AI Tools (langchain, openai, chromadb)"
                 ]
             ).ask()
-            
+
             # Install selected components
             if "Development Tools" in selected_components:
                 print("\n🛠️  Installing development tools...")
                 self.install_requirements(self.tool_requirements["development"])
                 self.setup_git_hooks()
-            
+
             if "Documentation Tools" in selected_components:
                 print("\n📚 Installing documentation tools...")
                 self.install_requirements(self.tool_requirements["documentation"])
-            
+
             if "AI Tools" in selected_components:
                 print("\n🤖 Installing AI tools...")
                 self.install_requirements(self.tool_requirements["ai_tools"])
-            
+
         except ImportError:
             # If questionary isn't available yet, install everything
             print("\n📦 Installing all components...")
             for requirements in self.tool_requirements.values():
                 self.install_requirements(requirements)
-        
+
         print("\n✨ Genesis Protocol Developer Kit setup completed!\n")
         print("Next steps:")
         print("1. Activate the virtual environment:")
@@ -308,4 +308,4 @@ class GenesisSetup:
 
 if __name__ == "__main__":
     setup = GenesisSetup()
-    setup.run_setup() 
+    setup.run_setup()
